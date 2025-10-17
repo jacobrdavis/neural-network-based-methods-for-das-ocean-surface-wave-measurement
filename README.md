@@ -1,5 +1,4 @@
 [![DOI](https://zenodo.org/badge/849108428.svg)](https://doi.org/10.5281/zenodo.13953570)
-
 # Code for:
 
 Davis, J. R., Thomson, J., Smith, M., Stanciu, A. C. (Submitted 2025) Neural network-based methods for ocean surface wave measurement using submarine distributed acoustic sensing (DAS)
