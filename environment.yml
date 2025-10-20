@@ -1,0 +1,20 @@
+name: neural-network-based-methods-for-das-ocean-surface-wave-measurement
+channels:
+  - defaults
+dependencies:
+  - python=3.13
+  - colorcet
+  - ipykernel
+  - jupyter
+  - matplotlib
+  - netcdf4
+  - notebook
+  - numpy
+  - pandas
+  - scipy
+  - tqdm
+  - pytorch
+  - xarray
+  - pip
+  - pip:
+    - brokenaxes
