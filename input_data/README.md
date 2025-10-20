@@ -8,6 +8,26 @@ This dataset accompanies the article "Neural network-based methods for ocean sur
 
 The netCDF files contain hourly and half-hourly DAS and mooring data used for model development. Hourly DAS and mooring data are processed into hourly strain rate spectra at channels within 1 km of each the three mooring sites (61 DAS channels per site).  Half-hourly DAS data are processed into 30-min strain rate frequency-wavenumber (f-k) spectra from all channels within 2 km of each mooring site (123 DAS channels per site).  Hourly and half-hourly along-cable DAS datasets, which contain frequency spectra and f-k spectra computed in 2-km segments along the cable with 50% overlap, are also provided.
 
+Download the Dryad dataset and unzip the contents into the `input_data` folder. It should have the following structure:
+
+```
+input_data/
+├── model_states
+│   ├── fk_convolutional_neural_network_hyperparameters.pth
+│   ├── fk_convolutional_neural_network_model.pth
+│   ├── fk_convolutional_neural_network_spectral_feature_norm.pth
+│   ├── fk_convolutional_neural_network_target_norm.pth
+│   ├── spectral_neural_network_hyperparameters.pth
+│   ├── spectral_neural_network_model.pth
+│   ├── spectral_neural_network_scalar_feature_norm.pth
+│   ├── spectral_neural_network_spectral_feature_norm.pth
+│   └── spectral_neural_network_target_norm.pth
+├── oliktok_das_mooring_half-hourly_along_cable_dataset.nc
+├── oliktok_das_mooring_hourly_along_cable_dataset.nc
+├── oliktok_das_mooring_half-hourly_dataset.nc
+└── oliktok_das_mooring_hourly_dataset.nc
+```
+
 ### Files and variables
 
 DAS and mooring data are provided in netCDF (.nc) format and contain self-describing global attributes, variable descriptions, and units. See the Methods section of the Dryad repository for additional details on data processing.
