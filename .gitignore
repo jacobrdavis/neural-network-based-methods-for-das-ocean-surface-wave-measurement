@@ -1,3 +1,13 @@
+# Project-specific
+arctic-das-ml-venv/
+.vscode/
+input_data/*
+!input_data/README.md
+TODO.md
+
+# Mac stuff
+.DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

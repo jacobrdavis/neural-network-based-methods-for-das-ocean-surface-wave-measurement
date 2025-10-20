@@ -1,0 +1,3 @@
+"""
+Median Transfer Function implementation.
+"""
