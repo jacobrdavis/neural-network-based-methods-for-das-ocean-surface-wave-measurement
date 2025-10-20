@@ -27,7 +27,7 @@ Example code for training and applying the models is organized into Python noteb
 
 1. Clone this repository.  In the terminal, run:
    ```sh
-   git clone https://github.com/jacobrdavis/ocean-surface-wave-slopes-and-wind-wave-alignment-observed-in-hurricane-idalia.git
+   git clone https://github.com/jacobrdavis/neural-network-based-methods-for-das-ocean-surface-wave-measurement.git
    ```
 3. Download the data and move it to [input_data/](input_data/). (See the **Data** section above.)
 4. Create a Python environment.  If using conda, run:
