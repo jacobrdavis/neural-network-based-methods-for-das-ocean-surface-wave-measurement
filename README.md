@@ -17,6 +17,8 @@ Seafloor distributed acoustic sensing (DAS) uses fiber-optic cables to sense the
 
 ## Data
 
+Data and model states are archived on Dryad (https://doi.org/10.5061/dryad.brv15dvnz) and should be saved to the (input_data/)[input_data/] directory. See (input_data/README.md)[input_data/README.md] for more information.
+
 ## Structure
 
 ## Installation
