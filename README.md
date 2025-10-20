@@ -21,6 +21,8 @@ Data and model states are archived on Dryad [(https://doi.org/10.5061/dryad.brv1
 
 ## Structure
 
+Example code for training and applying the models is organized into Python notebooks in the root directory. Source modules, including model definitions, training functions, and reference code (e.g., for computing f-k spectra) are in the [src/](src/) folder.
+
 ## Installation
 
 1. Clone this repository.  In the terminal, run:
