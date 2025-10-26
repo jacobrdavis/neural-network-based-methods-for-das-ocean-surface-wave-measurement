@@ -313,8 +313,8 @@ class SpectralLoss(nn.Module):
         super(SpectralLoss, self).__init__()
         self.mse_loss = nn.MSELoss()
 
-    def forward(self, input, target):
-        return self.mse_loss(input, target)
+    def forward(self, prediction, target):
+        return self.mse_loss(prediction, target)
 
 
 class SpectralEvalMetric(nn.Module):
@@ -353,7 +353,7 @@ class SpectralEvalMetric(nn.Module):
         # Inverse the target normalization.
         pressure_torch_no_norm = self.target_norm.inverse_transform(pressure_torch)
 
-        # Inverse the pressure spectral density transform. Tranformation
+        # Inverse the pressure spectral density transform. Transformation
         # must happen AFTER the normalization is removed.
         if self.target_transform is not None:
             return self.target_transform.inverse_transform(pressure_torch_no_norm)
@@ -437,7 +437,7 @@ def feature_tensor_from_dataset(
     # Cast DataArrays to PyTorch tensors.
     strain_tensor = torch.from_numpy(strain_da.to_numpy())
 
-    # Squeeze singular time dimensions to accomodate PyTorch DataLoader.
+    # Squeeze singular time dimensions to accommodate PyTorch DataLoader.
     if strain_tensor.shape[0] == 1:
         strain_tensor = torch.squeeze(strain_tensor, 0)
 
@@ -473,7 +473,7 @@ def target_tensor_from_dataset(
     # Cast DataArrays to PyTorch tensors.
     target_tensor = torch.from_numpy(target_da.to_numpy())
 
-    # Squeeze singular time dimensions to accomodate PyTorch DataLoader.
+    # Squeeze singular time dimensions to accommodate PyTorch DataLoader.
     if target_tensor.shape[0] == 1:
         target_tensor = torch.squeeze(target_tensor, 0)
 
