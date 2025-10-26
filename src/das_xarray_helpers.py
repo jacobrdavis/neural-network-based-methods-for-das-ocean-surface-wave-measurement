@@ -56,6 +56,34 @@ def unstack_ch_and_time(
     return new_das_xr
 
 
+def stack_site_and_time(
+    das_xr: Union[xr.Dataset, xr.DataArray]
+) -> Union[xr.Dataset, xr.DataArray]:
+    """Stack site and time dimensions into a single dimension.
+
+    For time index 't' and site index 's', the equivalent stacked
+    observation time is das_xr.isel(time_site=(t*n_sites + s)), where
+    `n_sites` is the number of sites.
+    """
+    # Note that stack automatically places new index at the end, hence
+    # the need for transpose. TODO: The transposition could be more
+    # general (e.g., by looking at original order of dims) but it works.
+    new_das_xr = (das_xr
+                  .stack(time_site=('time', 'site'))
+                  .transpose('time_site', ...))
+    return new_das_xr
+
+
+def unstack_site_and_time(
+    das_xr: Union[xr.Dataset, xr.DataArray]
+) -> Union[xr.Dataset, xr.DataArray]:
+    """Inverse operation to `stack_site_and_time`. """
+    new_das_xr = (das_xr
+                  .unstack('time_site')
+                  .transpose('time', 'site', ...))
+    return new_das_xr
+
+
 def index_by_ch(das_ds: xr.Dataset) -> xr.Dataset:
     """Return a new DAS Dataset indexed by the channel coordinate.
 
