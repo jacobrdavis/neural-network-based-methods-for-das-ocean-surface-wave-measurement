@@ -7,7 +7,7 @@ from typing import Callable, List, Literal, Optional, Tuple
 import torch
 import torch.nn as nn
 from tqdm.notebook import tqdm
-from torch.utils.data import Dataset, DataLoader, random_split
+from torch.utils.data import Dataset, DataLoader
 
 
 def train_regression_model(

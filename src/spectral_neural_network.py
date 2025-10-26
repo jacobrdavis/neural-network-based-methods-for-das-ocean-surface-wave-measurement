@@ -6,8 +6,8 @@ from typing import List, Literal, Optional, Tuple, TypedDict
 
 import torch
 import torch.nn as nn
-import xarray as xr
 import torch.nn.functional as F
+import xarray as xr
 
 from src import transforms
 
@@ -117,7 +117,7 @@ class SpectralEvalMetric(nn.Module):
         # Inverse the target normalization.
         pressure_torch_no_norm = self.target_norm.inverse_transform(pressure_torch)
 
-        # Inverse the pressure spectral density transform. Tranformation
+        # Inverse the pressure spectral density transform. Transformation
         # must happen AFTER the normalization is removed.
         if self.target_transform is not None:
             return self.target_transform.inverse_transform(pressure_torch_no_norm)
@@ -209,7 +209,7 @@ def feature_tensor_from_dataset(
     spectral_feature_transform: Optional[transforms.Transform] = transforms.LogTransform(),
 ) -> torch.Tensor:
     """Build Pytorch feature tensor from a DAS Xarray dataset."""
-    # Get feature and target DataArrays.
+    # Get feature DataArrays.
     strain_da = das_ds['strain_spectral_density']
     depth_da = das_ds['depth']
     direction_da = das_ds['cosine_squared_wave_direction']
